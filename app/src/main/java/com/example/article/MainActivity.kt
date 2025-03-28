@@ -25,15 +25,17 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ArticleTheme {
-                setContent {
-                    enableEdgeToEdge()
-                    Column {
-                        DisplayArticleImage()
-                        DisplayArticleContents()
-                    }
-                }
+                ArticleScreen(modifier = Modifier)
             }
         }
+    }
+}
+
+@Composable
+fun ArticleScreen(modifier : Modifier = Modifier) {
+    Column {
+        DisplayArticleImage(modifier)
+        DisplayArticleContents(modifier)
     }
 }
 
